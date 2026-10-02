@@ -1,0 +1,59 @@
+/******************************************************************************
+Exercise Q01 - Campus Canteen Group Order  [Medium]
+
+Input:
+MealPrice
+Quantity
+Service
+Students
+
+Process:
+Subtotal = MealPrice * Quantity
+ServiceCharge = Subtotal * (Service/100.0)
+FinalBill = ServiceCharge + Subtotal
+SharePerStudent = FinalBill / Students
+
+Output:
+Subtotal
+ServiceCharge
+FinalBill
+SharePerStudent
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double MealPrice, Service, Subtotal, ServiceCharge, FinalBill, SharePerStudent;
+    int Quantity, Students;
+    
+    //input
+    cout << "Enter the meal price: ";
+    cin >> MealPrice;
+    
+    cout << "Enter the quantity: ";
+    cin >> Quantity;
+    
+    cout << "Enter the service percentage: ";
+    cin >> Service;
+    
+    cout << "Enter the amount of students: ";
+    cin >> Students;
+    
+    //process
+    Subtotal = MealPrice * Quantity;
+    ServiceCharge = Subtotal * (Service/100.0);
+    FinalBill = ServiceCharge + Subtotal;
+    SharePerStudent = FinalBill / Students;
+    
+    //output
+    cout << fixed << setprecision(2);
+    
+    cout << "\nSubtotal: " << Subtotal;
+    cout << "\nService charge: " << ServiceCharge;
+    cout << "\nFinal bill: " << FinalBill;
+    cout << "\nShare/student: " << SharePerStudent;
+    
+return 0;
+}
