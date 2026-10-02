@@ -1,0 +1,50 @@
+/******************************************************************************
+Exercise Q05 - Conference Seating Planner  [Hard]
+
+Input: 
+NumOfAttendees
+SeatsPerTable
+
+Process: 
+ExactTables	= (NumOfAttendees / SeatsPerTable);
+TablesRequired = ceil(ExactTables);
+TotalSeats = TablesRequired * SeatsPerTable;
+UnusedSeats = TotalSeats - NumOfAttendees;
+
+Output:
+ExactTables
+TablesRequired
+TotalSeats
+UnusedSeats
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double ExactTables;
+    int NumOfAttendees, SeatsPerTable, TablesRequired, TotalSeats, UnusedSeats;
+    
+    //Input
+    cout << "Enter the number of attendees: ";
+    cin >> NumOfAttendees;
+    
+    cout << "Enter the seats per table: ";
+    cin >> SeatsPerTable;
+    
+    //Process
+    ExactTables	= double(NumOfAttendees) / SeatsPerTable;
+    TablesRequired = ceil(ExactTables);
+    TotalSeats = TablesRequired * SeatsPerTable;
+    UnusedSeats = TotalSeats - NumOfAttendees;
+
+    //Output
+    cout << fixed << setprecision(2) << "\nExact tables: " << ExactTables;
+    cout << "\nTables required: " << (int)TablesRequired;
+    cout << "\nTotial seats: " << (int)TotalSeats;
+    cout << "\nUnused seats: " << (int)UnusedSeats;
+    
+    return 0;
+}
