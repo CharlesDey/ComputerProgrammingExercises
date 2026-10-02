@@ -1,0 +1,63 @@
+/******************************************************************************
+Exercise Q08 - Environmental Sensor Summary  [Hard]
+
+Inupt:
+T1
+T2
+T3
+
+Process:
+Average = (T1 + T2 + T3) / 3
+Difference = fabs(T1-T3)
+Floor = floor(Average)
+Ceil = ceil(Average)
+Trunc = trunc(Average)
+Round = round(Average)
+
+Output:
+Average
+Difference
+Floor
+Ceil
+Trunc
+Round
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double T1, T2, T3, Average, Difference;
+    int Floor, Ceil, Trunc, Round;
+    
+    //Input
+    cout << "Enter the first temperature reading: ";
+    cin >> T1;
+    
+    cout << "Enter the second temperature reading: ";
+    cin >> T2;
+    
+    cout << "Enter the third temperature reading: ";
+    cin >> T3;
+    
+    //Process
+    Average = (T1 + T2 + T3) / 3;
+    Difference = fabs(T1-T3);
+    Floor = floor(Average);
+    Ceil = ceil(Average);
+    Trunc = trunc(Average);
+    Round = round(Average);
+    
+    //Output
+    cout << fixed << setprecision(3);
+    cout << "\nAverage: " << Average;
+    cout << "\n[T1-T3]: " << Difference;
+    cout << "\nFloor: " << Floor;
+    cout << "\nCeil: " << Ceil;
+    cout << "\nTrunc: " << Trunc;
+    cout << "\nRound: " << Round;
+
+    return 0;
+}
