@@ -1,0 +1,83 @@
+/******************************************************************************
+Exercise Q10 - Online Store Invoice and Shipping Boxes  [Hard - Capstone]
+
+Input: 
+Product
+Price
+Qty
+DiscountPercentage
+ShipPerBox
+UnitsPerBox
+
+Process:
+Subtotal = Price * Qty
+Discount = Subtotal * (DiscountPercentage / 100.0)
+Merchandise = Subtotal - Discount 
+ExactBoxes = (double)Qty / UnitsPerBox
+Boxes = ceil(ExactBoxes)
+Shipping = Boxes * ShipPerBox
+AmountDue = Merchandise + Shipping
+    
+Output:
+Product 
+Subtotal
+Discount
+Merchandise
+ExactBoxes
+Boxes
+Shipping
+AmountDue
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string Product;
+    double Price, DiscountPercentage, Subtotal, Discount, Merchandise, ExactBoxes, Shipping, AmountDue;
+    int Qty, ShipPerBox, UnitsPerBox, Boxes;
+    
+    //Input
+    cout << "Enter the product name: ";
+    getline (cin, Product);
+    
+    cout << "Enter the unit price: ";
+    cin >> Price;
+    
+    cout << "Enter the product quentity: ";
+    cin >> Qty;
+    
+    cout << "Enter the discount percentage: ";
+    cin >> DiscountPercentage; 
+    
+    cout << "Enter the shippping fee per box: ";
+    cin >> ShipPerBox;
+    
+    cout << "Enter the units per box: ";
+    cin >> UnitsPerBox;
+    
+    //Process
+    Subtotal = Price * Qty;
+    Discount = Subtotal * (DiscountPercentage / 100.0);
+    Merchandise = Subtotal - Discount ;
+    ExactBoxes = (double)Qty / UnitsPerBox;
+    Boxes = ceil(ExactBoxes);
+    Shipping = Boxes * ShipPerBox;
+    AmountDue = Merchandise + Shipping;
+    
+    //Output
+    cout << "\n\t" << Product << " RECEIPT";
+    cout << fixed << setprecision(2);
+    cout << "\n\n\tSubtotal: "<< Subtotal;
+    cout << "\n\tDiscount: "<< Discount;
+    cout << "\n\tMerchandise: "<< Merchandise;
+    cout << "\n\tExactBoxes: "<< ExactBoxes;
+    cout << "\n\tBoxes: "<< Boxes;
+    cout << "\n\tShipping: "<< Shipping;
+    cout << "\n\tAmountDue: "<< AmountDue;
+    
+    return 0;
+}
