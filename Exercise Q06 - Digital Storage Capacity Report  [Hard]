@@ -41,7 +41,7 @@ int main()
     cout << "\nMB: " << MB;
     cout << fixed << setprecision(4);
     cout << "\nGB: " << GB;
-    cout << "\nWhole MB: " << WholeMB;
+    cout << "\nWhole MB: " << (int)WholeMB;
     
     return 0;
 }
