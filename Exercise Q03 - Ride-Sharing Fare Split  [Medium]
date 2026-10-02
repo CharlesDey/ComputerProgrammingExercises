@@ -1,0 +1,71 @@
+/******************************************************************************
+Exercise Q03 - Ride-Sharing Fare Split  [Medium] 
+
+Input: 
+BaseFare
+Distance
+RatePerKm
+TollFee
+BookingFeePercent
+Passengers
+
+Process:
+DistanceCharge = Distance * RatePerKm
+PreFee = BaseFare + DistanceCharge + TollFee
+BookingFee = PreFee * (BookingFeePercent / 100.0)
+Total = BookingFee + PreFee
+PerPassenger = Total / Passengers
+
+Output: 
+DistanceCharge
+PreFee
+BookingFee
+Total
+PerPassenger
+
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    int Passengers;
+    double BaseFare, Distance, RatePerKm, TollFee, BookingFeePercent;
+    double DistanceCharge, PreFee, BookingFee, Total, PerPassenger;
+    
+    //Input
+    cout << "Enter the base fare: ";
+    cin >> BaseFare;
+    
+    cout << "Enter the distance (km): ";
+    cin >> Distance;
+    
+    cout << "Enter the rate/km: ";
+    cin >> RatePerKm;
+    
+    cout << "Enter the toll fee: ";
+    cin >> TollFee;
+    
+    cout << "Enter the booking-fee percentage: ";
+    cin >> BookingFeePercent;
+    
+    cout << "Enter the number of passengers: ";
+    cin >> Passengers;
+    
+    //Process
+    DistanceCharge = Distance * RatePerKm;
+    PreFee = BaseFare + DistanceCharge + TollFee;
+    BookingFee = PreFee * (BookingFeePercent / 100.0);
+    Total = BookingFee + PreFee;
+    PerPassenger = Total / Passengers;
+    
+    //output
+    cout << fixed << setprecision(2);
+    cout << "\nDistance charge: " << DistanceCharge;
+    cout << "\nPre-fee: " << PreFee;
+    cout << "\nBooking fee " << BookingFee;
+    cout << "\nTotal: " << Total;
+    cout << "\nPer passenger: " << PerPassenger;
+    
+    return 0;
+}
