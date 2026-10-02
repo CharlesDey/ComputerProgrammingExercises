@@ -1,0 +1,60 @@
+/******************************************************************************
+Exercise Q04 - Paint Can Estimator  [Hard]
+
+Input: 
+Width
+Height
+NumOfCoats
+CoveragePerCanInSqm
+
+Process: 
+WallArea = Width * Height 
+TotalPaintArea = WallArea * NumOfCoats
+ExactCans = TotalPaintArea / CoveragePerCanInSqm
+Ceil(ExactCans)  
+
+Output:
+WallArea
+TotalPaintArea
+ExactCans
+CansToBuy
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double Width, Height, CoveragePerCanInSqm;
+    double WallArea, TotalPaintArea, ExactCans;
+    int NumOfCoats, CansToBuy;
+    
+    //Input
+    cout << "Enter the wall width: ";
+    cin >> Width;
+    
+    cout << "Enter the wall height: ";
+    cin >> Height;
+    
+    cout << "Enter the number of coats: ";
+    cin >> NumOfCoats;
+    
+    cout << "Enter the coverage per can in sqm: ";
+    cin >> CoveragePerCanInSqm;
+    
+    //Process
+    WallArea = Width * Height;
+    TotalPaintArea = WallArea * NumOfCoats;
+    ExactCans = TotalPaintArea / CoveragePerCanInSqm;
+    CansToBuy = ceil(ExactCans); 
+    
+    //Output
+    cout << fixed << setprecision(2);
+    cout << "\nWall area: " << WallArea;
+    cout << "\nTotal paint area: " << TotalPaintArea;
+    cout << "\nExact cans: " << ExactCans;
+    cout << "\nCans to buy: " << CansToBuy;
+
+    return 0;
+}
