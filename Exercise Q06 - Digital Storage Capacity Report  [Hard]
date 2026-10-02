@@ -1,0 +1,47 @@
+/******************************************************************************
+Exercise Q06 - Digital Storage Capacity Report  [Hard]
+
+Input:
+Bytes
+
+Process:
+KB = Bytes / 1024.0
+MB = KB / 1024
+GB = MB / 1024
+WholeMB = MB
+
+Output:
+KB
+MB
+GB
+Whole MB
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    long long Bytes;
+    double KB, MB, GB, WholeMB;
+    
+    //Input
+    cout << "Enter your file size in bytes: ";
+    cin >> Bytes;
+    
+    //Process
+    KB = Bytes / 1024.0;
+    MB = KB / 1024;
+    GB = MB / 1024;
+    WholeMB = (int)MB;
+    
+    //Output
+    cout << fixed << setprecision(2);
+    cout << "\nKB: " << KB;
+    cout << "\nMB: " << MB;
+    cout << fixed << setprecision(4);
+    cout << "\nGB: " << GB;
+    cout << "\nWhole MB: " << WholeMB;
+    
+    return 0;
+}
