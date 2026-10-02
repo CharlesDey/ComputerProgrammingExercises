@@ -1,0 +1,58 @@
+/******************************************************************************
+Exercise Q09 - Tuition Installment Calculator  [Hard]
+
+Input:
+Tuition
+Fee
+Down
+Months
+
+Process:
+ProcessingFee = Tuition (Fee / 100.0)
+AdjustedTuition = Tuition + ProcessingFee 
+Balance = AdjustedTuition - Down
+Monthly = Balance / Months
+
+Output:
+ProcessingFee
+AdjustedTuition
+Balance
+Monthly
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double Tuition, Fee, Down, ProcessingFee, AdjustedTuition, Balance, Monthly; 
+    int Months;
+    
+    //Input
+    cout << "Enter your base tuition: ";
+    cin >> Tuition;
+    
+    cout << "Enter the processing fee percentage: ";
+    cin >> Fee;
+    
+    cout << "Enter your down-payment amount: ";
+    cin >> Down;
+    
+    cout << "Enter your amount of monthly installments: ";
+    cin >> Months;
+    
+    //Process
+    ProcessingFee = Tuition * (Fee / 100.0);
+    AdjustedTuition = Tuition + ProcessingFee;
+    Balance = AdjustedTuition - Down;
+    Monthly = Balance / Months;
+    
+    //Output
+    cout << fixed << setprecision(2);
+    cout << "\nProcessing fee: " << ProcessingFee;
+    cout << "\nAdjusted tuition: " << AdjustedTuition;
+    cout << "\nBalance: " << Balance;
+    cout << "\nMonthly: " << Monthly;
+
+    return 0;
+}
